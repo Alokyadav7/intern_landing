@@ -3,16 +3,25 @@ import React from 'react';
 const YouthPeaceAmbassadorEvent = () => {
   return (
     <div className="bg-gray-800 text-white min-h-screen flex flex-col items-center py-10 px-4">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-extrabold underline mb-4">
+      <div className="text-right mb-8 w-full pr-10">
+        <h1 
+          className="text-4xl font-extrabold underline mb-4"
+          style={{ color: 'rgba(255, 255, 255, 1)' }}
+        >
           Experience the Transformation with Youth Peace Ambassador – Sajan Shah
         </h1>
-        <p className="text-xl font-semibold">
+        <p 
+          className="text-xl font-semibold"
+          style={{ color: 'rgba(255, 255, 255, 1)' }}
+        >
           🚀 Make Your Academic and Life Journey Limitless 🚀
         </p>
       </div>
 
-      <div className="bg-gray-900 rounded-lg p-8 shadow-lg max-w-2xl text-center space-y-6">
+      <div 
+        className="bg-gray-900 bg-opacity-80 rounded-lg p-8 shadow-lg max-w-2xl text-right space-y-6 w-full pr-10"
+        style={{ color: 'rgba(255, 255, 255, 1)' }}
+      >
         <h2 className="text-2xl font-bold text-yellow-400">
           Sajan Shah: India’s Youngest Motivational Speaker
         </h2>
@@ -55,7 +64,9 @@ const YouthPeaceAmbassadorEvent = () => {
             This is more than just an event—it’s a <span className="underline">movement</span>. Join the revolution, unlock your potential, and lead a life without limits! 🚀
           </p>
 
-          <button className="mt-8 bg-yellow-500 text-black font-bold py-3 px-6 rounded-full shadow-md hover:bg-yellow-400">
+          <button 
+            className="mt-8 bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-blue-400"
+          >
             Reserve Your Free Seats Now
           </button>
 

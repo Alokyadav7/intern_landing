@@ -6,49 +6,57 @@ const EventDatesAndVenues = () => {
       date: "22nd November 2024",
       day: "Friday",
       time: "8 PM – 10 PM",
-      venue: "Town Hall, Sector-17, Gandhinagar, Gujarat 382017"
+      venue: "Town Hall, Sector-17, Gandhinagar, Gujarat 382017",
+      mapLink: "https://www.google.com/maps/place/Town+Hall,+Sector-17,+Gandhinagar,+Gujarat+382017"
     },
     {
       date: "24th November 2024",
       day: "Sunday",
       time: "8 PM – 10 PM",
-      venue: "Town Hall, Sector-17, Gandhinagar, Gujarat 382017"
+      venue: "Town Hall, Sector-17, Gandhinagar, Gujarat 382017",
+      mapLink: "https://www.google.com/maps/place/Town+Hall,+Sector-17,+Gandhinagar,+Gujarat+382017"
     },
     {
       date: "27th November 2024",
       day: "Wednesday",
       time: "8 PM – 10 PM",
-      venue: "Shyama Prasad Mukherjee Auditorium, RTO Rd, Ramol, Ahmedabad"
+      venue: "Shyama Prasad Mukherjee Auditorium, RTO Rd, Ramol, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/Shyama+Prasad+Mukherjee+Auditorium,+RTO+Rd,+Ramol,+Ahmedabad"
     },
     {
       date: "29th November 2024",
       day: "Friday",
       time: "8 PM – 10 PM",
-      venue: "Rukmani Ben Bhavsar AC Hall, 16, Ram Nagar, Sabarmati, Ahmedabad"
+      venue: "Rukmani Ben Bhavsar AC Hall, 16, Ram Nagar, Sabarmati, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/Rukmani+Ben+Bhavsar+AC+Hall,+16,+Ram+Nagar,+Sabarmati,+Ahmedabad"
     },
     {
       date: "1st December 2024",
       day: "Sunday",
       time: "8 PM – 10 PM",
-      venue: "Saheed Mangal Pandey Auditorium, Nikol Gam Rd, Opp Shiromani Bungalows, Ahmedabad"
+      venue: "Saheed Mangal Pandey Auditorium, Nikol Gam Rd, Opp Shiromani Bungalows, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/Saheed+Mangal+Pandey+Auditorium,+Nikol+Gam+Rd,+Opp+Shiromani+Bungalows,+Ahmedabad"
     },
     {
       date: "4th December 2024",
       day: "Wednesday",
       time: "8 PM – 10 PM",
-      venue: "Pandit Deendayal Auditorium, Rajpath Rangoli Rd, Bodakdev, Ahmedabad"
+      venue: "Pandit Deendayal Auditorium, Rajpath Rangoli Rd, Bodakdev, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/Pandit+Deendayal+Auditorium,+Rajpath+Rangoli+Rd,+Bodakdev,+Ahmedabad"
     },
     {
       date: "5th December 2024",
       day: "Thursday",
       time: "8 PM – 10 PM",
-      venue: "H.K. Auditorium, HK College, Vishalpur, Ellis Bridge, Ahmedabad"
+      venue: "H.K. Auditorium, HK College, Vishalpur, Ellis Bridge, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/H.K.+Auditorium,+HK+College,+Vishalpur,+Ellis+Bridge,+Ahmedabad"
     },
     {
       date: "6th December 2024",
       day: "Friday",
       time: "8 PM – 10 PM",
-      venue: "H.K. Auditorium, HK College, Vishalpur, Ellis Bridge, Ahmedabad"
+      venue: "H.K. Auditorium, HK College, Vishalpur, Ellis Bridge, Ahmedabad",
+      mapLink: "https://www.google.com/maps/place/H.K.+Auditorium,+HK+College,+Vishalpur,+Ellis+Bridge,+Ahmedabad"
     }
   ];
 
@@ -67,7 +75,12 @@ const EventDatesAndVenues = () => {
             <h2 className="text-xl font-bold text-yellow-400">{event.date}</h2>
             <p className="text-lg"><strong>Day:</strong> {event.day}</p>
             <p className="text-lg"><strong>Time:</strong> {event.time}</p>
-            <p className="text-lg"><strong>Venue:</strong> {event.venue}</p>
+            <p className="text-lg">
+              <strong>Venue:</strong> 
+              <a href={event.mapLink} className="text-yellow-400 underline" target="_blank" rel="noopener noreferrer">
+                {event.venue}
+              </a>
+            </p>
             <button className="mt-4 bg-yellow-500 text-black font-bold py-2 px-4 rounded-full shadow-md transition-transform transform hover:bg-yellow-400 hover:scale-105">
               Book Your Seat
             </button>

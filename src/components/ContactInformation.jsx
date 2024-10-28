@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const ContactInformation = () => {
   return (
@@ -11,8 +13,30 @@ const ContactInformation = () => {
           <span className="text-yellow-300 mr-2">📍</span>
           8 Deepawali Centre, Opp. Old High Court, Income Tax Under Bridge, Ashram Road, Ahmedabad – 380014
         </p>
+        {/* Embed Google Maps with additional styling */}
+        <div className="mt-4">
+          <iframe
+            title="Head Office Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31105.69430885027!2d72.5616503384571!3d23.022505370964547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f58363cb8b%3A0xe001f78b8b51f39!2sDeepawali%20Centre!5e0!3m2!1sen!2sin!4v1698481367557!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style={{ border: 0, borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.5)' }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        {/* Link to Google Maps */}
+        <p className="mt-2">
+          <a
+            href="https://www.google.co.in/maps/search/8+Deepawali+Centre,+Opp.+Old+High+Court,+Income+Tax+Under+Bridge,+Ashram+Road,+Ahmedabad+%E2%80%93+380014/@23.0409434,72.5634484,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-yellow-300 underline"
+          >
+            Open in Google Maps
+          </a>
+        </p>
       </div>
-
 
       <div className="mb-8 p-6 bg-gray-800 rounded-lg shadow-md">
         <h3 className="text-3xl font-semibold text-yellow-200 mb-4">Branch Offices</h3>
@@ -70,22 +94,36 @@ const ContactInformation = () => {
       </div>
 
       {/* Follow Us Section */}
-      <div className="mt-6 p-6 bg-gray-800 rounded-lg shadow-md">
-        <h3 className="text-3xl font-semibold text-yellow-200 mb-4">Follow Us</h3>
-        <p className="flex items-center mb-2">
-          <span className="text-yellow-300 mr-2">📱</span> Number: 8511363376
-        </p>
-        <p className="flex items-center mb-2">
-          <span className="text-yellow-300 mr-2">📸</span> Instagram: <a href="https://www.instagram.com/sajan_shahh" className="text-yellow-300 underline">sajan_shahh</a>
-        </p>
-        <p className="flex items-center mb-2">
-          <span className="text-yellow-300 mr-2">🐦</span> Twitter: <a href="https://twitter.com/sajanofficial" className="text-yellow-300 underline">@sajanofficial</a>
-        </p>
-        <p className="flex items-center mb-2">
-          <span className="text-yellow-300 mr-2">📹</span> YouTube: <a href="https://www.youtube.com/channel/SajanShah" className="text-yellow-300 underline">Sajan Shah</a>
-        </p>
-      </div>
+      <div className="mt-6 p-6 bg-gray-800 rounded-lg shadow-md text-center">
+      <h3 className="text-3xl font-semibold text-yellow-200 mb-4">Follow Us</h3>
 
+      <div className="flex justify-center space-x-6 items-center">
+        <a 
+          href="https://www.instagram.com/sajan_shahh" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center transition duration-300 transform hover:scale-110 hover:bg-yellow-300 rounded-full p-3">
+          <FontAwesomeIcon icon={faInstagram} className="text-gray-900 h-8 w-8" />
+        </a>
+
+        <a 
+          href="https://twitter.com/sajanofficial" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center transition duration-300 transform hover:scale-110 hover:bg-yellow-300 rounded-full p-3">
+          <FontAwesomeIcon icon={faTwitter} className="text-gray-900 h-8 w-8" />
+        </a>
+
+        <a 
+          href="https://www.youtube.com/channel/SajanShah" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center transition duration-300 transform hover:scale-110 hover:bg-yellow-300 rounded-full p-3">
+          <FontAwesomeIcon icon={faYoutube} className="text-gray-900 h-8 w-8" />
+        </a>
+      </div>
+    </div>
+    
       <blockquote className="mt-6 italic text-center border-l-4 border-yellow-300 pl-4 py-2">
         “We look forward to connecting with you and helping you on your journey!”
       </blockquote>

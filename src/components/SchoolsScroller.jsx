@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Sample data for schools
 const schools = [
@@ -18,12 +18,47 @@ const schools = [
 ];
 
 const SchoolsScroller = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -768, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 768, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="bg-gray-800 text-white p-8">
-      <h2 className="text-3xl font-bold text-yellow-300 mb-4">Schools in Scroller</h2>
-      <div className="overflow-x-scroll whitespace-nowrap">
+    <div className="bg-gray-800 text-white p-8 relative">
+      <h2 className="text-3xl font-bold text-yellow-300 mb-4 text-center">Schools in Scroller</h2>
+
+      {/* Left and Right Scroll Buttons */}
+      <button
+        onClick={scrollLeft}
+        className="absolute left-4 bg-yellow-500 text-black rounded-full p-2 shadow-lg hover:bg-yellow-400"
+      >
+        &lt;
+      </button>
+      
+      <button
+        onClick={scrollRight}
+        className="absolute right-4 bg-yellow-500 text-black rounded-full p-2 shadow-lg hover:bg-yellow-400"
+      >
+        &gt;
+      </button>
+
+      {/* School Scroller */}
+      <div
+        ref={scrollContainerRef}
+        className="overflow-x-scroll whitespace-nowrap scrollbar-hide"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} // Hide scrollbar for Firefox and IE
+      >
         {schools.map((school, index) => (
-          <div key={index} className="inline-block mx-2 bg-gray-900 rounded-lg shadow-lg w-64">
+          <div key={index} className="inline-block mx-4 bg-gray-900 rounded-lg shadow-lg w-64">
             <img
               src={school.image}
               alt={school.name}
@@ -41,24 +76,24 @@ const SchoolsScroller = () => {
         <p className="mb-4">🌟 Transform your life in just 2 hours and be part of a movement that matters!</p>
       </div>
 
-      {/* Updated Contact Details Section */}
+      {/* Contact Details Section */}
       <div className="mt-8 bg-gray-900 p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-yellow-300 mb-4">Contact Us</h2>
-        <p className="text-lg mb-2">For any assistance related to tickets or other support, feel free to reach out to our team:</p>
-        <div className="flex flex-col items-center">
-          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-full max-w-sm text-center">
+        <p className="text-lg mb-6">For any assistance related to tickets or other support, feel free to reach out to our team:</p>
+        <div className="flex flex-wrap justify-between">
+          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-5/12 text-center">
             <p className="font-semibold">📞 Sneha</p>
             <p className="text-sm">851 136 3376</p>
           </div>
-          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-full max-w-sm text-center">
+          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-5/12 text-center">
             <p className="font-semibold">📞 Rika</p>
             <p className="text-sm">942 686 1925</p>
           </div>
-          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-full max-w-sm text-center">
+          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-5/12 text-center">
             <p className="font-semibold">📞 Ritu</p>
             <p className="text-sm">999 804 6351</p>
           </div>
-          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-full max-w-sm text-center">
+          <div className="bg-gray-800 rounded-lg p-4 shadow-md mb-2 w-5/12 text-center">
             <p className="font-semibold">📞 Prachi</p>
             <p className="text-sm">722 788 7909</p>
           </div>
@@ -76,4 +111,5 @@ const SchoolsScroller = () => {
     </div>
   );
 };
+
 export default SchoolsScroller;
